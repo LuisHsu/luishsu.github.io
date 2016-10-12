@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>LuisHsu.net</title>
+    </head>
+    <style media="screen">
+        body{
+            margin: 0;
+            background-color: rgb(46, 46, 46);
+            color: rgb(254, 255, 252);
+            font-family: sans-serif;
+        }
+        section{
+            width: 100%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        body h1{
+            text-align: center;
+            margin-top: 15%;
+        }
+        .langsel{
+            background-color: rgba(167, 178, 212, 0.5);
+            width: 20%;
+            height: 50%;
+            margin: 2.5%;
+            float: left;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .langsel:hover{
+            background-color: rgba(167, 178, 212, 1);
+        }
+    </style>
+    <script type="text/javascript">
+        function langClick(lang) {
+            location.href = lang +'/index.html'
+        }
+    </script>
+    <body>
+        <h1>選擇你所喜歡的語言<br>Select your preferred language</h1>
+        <section>
+            <div class="langsel" onclick="langClick('zh_TW')">
+                <h2>繁體中文</h2>
+            </div>
+            <div class="langsel" onclick="langClick('en_US')">
+                <h2>English</h2>
+            </div>
+        </section>
+    </body>
+</html>

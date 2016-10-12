@@ -1,0 +1,68 @@
+body{
+    margin: 0;
+    height: 100vh;
+    color: #fff;
+}
+nav{
+    position: fixed;
+    background-color: rgb(46, 46, 46);
+    width: 13%;
+    height: 100%;
+    box-shadow: 2px 0 4px 2px rgb(46, 46, 46);
+}
+nav h1{
+    width: 100%;
+    text-align: center;
+}
+.navbutton i{
+    border-radius: 10px;
+    border: 2px outset;
+    width: 1.5em;
+    height: 1.5em;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.navbutton{
+    text-align: left;
+    font-size: 1.2em;
+    margin-top: 10%;
+}
+#AboutNav{
+    box-shadow: 1px 1px 3px 0 rgba(209, 222, 250, 1);
+    border-color: rgba(88, 140, 255, 0.75);
+    background-color: rgba(88, 140, 255, 0.75);
+}
+#WorkNav{
+    box-shadow: 1px 1px 3px 0 rgba(250, 222, 209, 1);
+    border-color: rgba(255, 118, 88, 0.75);
+    background-color: rgba(255, 118, 88, 0.75);
+}
+#NoteNav{
+    box-shadow: 1px 1px 3px 0 rgba(250, 245, 209, 1);
+    border-color: rgba(255, 248, 88, 0.75);
+    background-color: rgba(255, 248, 88, 0.75);
+}
+#LinkNav{
+    box-shadow: 1px 1px 3px 0 rgba(227, 250, 209, 1);
+    border-color: rgba(156, 255, 88, 0.75);
+    background-color: rgba(156, 255, 88, 0.75);
+}
+#CleanNav{
+    box-shadow: 1px 1px 3px 0 rgba(255, 255, 255, 1);
+    border-color: rgba(149, 149, 149, 0.75);
+    background-color: rgba(149, 149, 149, 0.75);
+}
+#CleanNavDiv{
+    position: absolute;
+    bottom: 2.5%;
+    width: 100%;
+}
+#BackPage{
+    float: right;
+    width: 87%;
+    height: 100vh;
+    border-style: none;
+}
