@@ -6,50 +6,88 @@
     </head>
     <style media="screen">
         body{
-            margin: 0;
-            background-color: rgb(46, 46, 46);
+            background-color: #000;
             color: rgb(254, 255, 252);
-            font-family: sans-serif;
+            font-family: serif;
+        }
+        h3{
+            text-align: center;
+            font-family: monospace;
+            font-weight: normal;
+        }
+        h4{
+            margin: auto;
+            margin-top: 1%;
+            width: 75%;
+            font-weight: normal;
+            text-align: justify;
         }
         section{
+            border-style: dashed;
+            border-color: #fff;
+            border-width: 1px;
+            width: 80%;
+            margin: auto;
+            height: 60vh;
+        }
+        table{
             width: 100%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
         }
-        body h1{
-            text-align: center;
-            margin-top: 15%;
+        td{
+            padding: 5px;
         }
-        .langsel{
-            background-color: rgba(167, 178, 212, 0.5);
-            width: 20%;
-            height: 50%;
-            margin: 2.5%;
-            float: left;
-            border-radius: 10px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .langsel:hover{
-            background-color: rgba(167, 178, 212, 1);
+        .selLang{
+            background-color: rgba(255, 255, 255, 0.32)
         }
     </style>
     <script type="text/javascript">
-        function langClick(lang) {
-            location.href = lang +'/index.html'
+        var selLang = 0
+        function enterPage(index) {
+            switch (index) {
+                case 0:
+                    location.href = 'zh_TW/index.html'
+                    break;
+                case 1:
+                    location.href = 'en_US/index.html'
+                    break;
+                default:
+            }
+        }
+        function keyPress(event) {
+            var opts = document.getElementsByTagName('td')
+            if (event.key == "ArrowUp") {
+                if(selLang > 0){
+                    opts[selLang].className = ''
+                    opts[--selLang].className = 'selLang'
+                }
+            }else if (event.key == "ArrowDown") {
+                if(selLang < opts.length - 1){
+                    opts[selLang].className = ''
+                    opts[++selLang].className = 'selLang'
+                }
+            }else if(event.key == "Enter"){
+                enterPage(selLang)
+            }
         }
     </script>
-    <body>
-        <h1>選擇你所喜歡的語言<br>Select your preferred language</h1>
+    <body onkeypress="keyPress(event)">
+        <h3>LuisHsu.net bootloader</h3>
         <section>
-            <div class="langsel" onclick="langClick('zh_TW')">
-                <h2>繁體中文</h2>
-            </div>
-            <div class="langsel" onclick="langClick('en_US')">
-                <h2>English</h2>
-            </div>
+            <table>
+                <tr>
+                    <td class="selLang">
+                        繁體中文
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        English
+                    </td>
+                </tr>
+            </table>
         </section>
+        <h4>用鍵盤 &uarr; 和 &darr; 鍵選擇語言選項，按Enter鍵啟動已選擇的首頁。</h4>
+        <h4>Use the &uarr; and &darr; keys to select which entry is highlighted.</h4>
+        <h4>Press enter to boot the selected homepage.</h4>
     </body>
 </html>

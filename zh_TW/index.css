@@ -2,67 +2,128 @@ body{
     margin: 0;
     height: 100vh;
     color: #fff;
+    overflow: hidden;
 }
 nav{
     position: fixed;
     background-color: rgb(46, 46, 46);
-    width: 13%;
+    width: 3.75em;
     height: 100%;
     box-shadow: 2px 0 4px 2px rgb(46, 46, 46);
+    z-index: 9;
 }
-nav h1{
-    width: 100%;
-    text-align: center;
+section{
+    position: absolute;
+    top: 0;
+    left: 3.75em;
+    width: calc(100% - 3.75em);
+    height: 100%;
+    float: right;
+    z-index: 0;
 }
 .navbutton i{
     border-radius: 10px;
     border: 2px outset;
     width: 1.5em;
     height: 1.5em;
-    font-size: 1.5em;
+    font-size: 2em;
     line-height: 1.5em;
     text-align: center;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 5%;
 }
-.navbutton{
-    text-align: left;
+.navbutton:hover i{
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+.navbutton:hover b{
+    display: block;
+}
+.navbutton b{
+    background-color: rgb(46, 46, 46);
+    border-radius: 10px;
+    font-weight: normal;
+    line-height: 1.5em;
+    box-shadow: 0 0 2px 2px rgb(46, 46, 46);
+    display: none;
+}
+.navbutton p{
+    white-space: nowrap;
     font-size: 1.2em;
-    margin-top: 10%;
+    margin: 0;
+    padding-top: 0.65em;
+    position: absolute;
+    left: 3.5em;
+    display: inline-block;
 }
-#AboutNav{
+#AboutNav > i{
     box-shadow: 1px 1px 3px 0 rgba(209, 222, 250, 1);
     border-color: rgba(88, 140, 255, 0.75);
     background-color: rgba(88, 140, 255, 0.75);
 }
-#WorkNav{
+#AboutNav:hover i{
+    color: rgb(152, 195, 251);
+}
+#WorkNav > i{
     box-shadow: 1px 1px 3px 0 rgba(250, 222, 209, 1);
     border-color: rgba(255, 118, 88, 0.75);
     background-color: rgba(255, 118, 88, 0.75);
 }
-#NoteNav{
+#WorkNav:hover i{
+    color: rgb(251, 203, 152);
+}
+#NoteNav > i{
     box-shadow: 1px 1px 3px 0 rgba(250, 245, 209, 1);
     border-color: rgba(255, 248, 88, 0.75);
     background-color: rgba(255, 248, 88, 0.75);
 }
-#LinkNav{
+#NoteNav:hover i{
+    color: rgb(251, 241, 152);
+}
+#LinkNav > i{
     box-shadow: 1px 1px 3px 0 rgba(227, 250, 209, 1);
     border-color: rgba(156, 255, 88, 0.75);
     background-color: rgba(156, 255, 88, 0.75);
 }
-#CleanNav{
+#LinkNav:hover i{
+    color: rgb(181, 251, 152);
+}
+#CleanNav > i{
     box-shadow: 1px 1px 3px 0 rgba(255, 255, 255, 1);
     border-color: rgba(149, 149, 149, 0.75);
     background-color: rgba(149, 149, 149, 0.75);
 }
-#CleanNavDiv{
+#CleanNav:hover i{
+    color: rgb(195, 195, 195);
+}
+#CleanNav{
     position: absolute;
-    bottom: 2.5%;
+    left: 0;
+    bottom: 0;
     width: 100%;
 }
 #BackPage{
-    float: right;
-    width: 87%;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     border-style: none;
+}
+#WelcomeMask{
+    position: absolute;
+    top: 10%;
+    left: 12.5%;
+    width: 75%;
+    height: 80%;
+    border-radius: 10px;
+    background-color: rgba(73, 73, 73, 0.7);
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+#WelcomeMask h1,h3{
+    text-align: center;
+}
+#WelcomeMask hr{
+    width: 90%;
+    color: #fff;
+}
+#WelcomeMask div{
+    width: 45%;
+    margin: auto;
 }

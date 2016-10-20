@@ -4,29 +4,41 @@
         <meta charset="utf-8">
         <title>LuisHsu.net</title>
         <link rel="stylesheet" href="index.css" media="screen">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+        <script type="text/javascript" src="index.js"></script>
     </head>
-    <body>
+    <body onload="load()">
         <nav>
-            <h1>LuisHsu</h1>
-            <div class="navbutton">
-                <i class="fa fa-info-circle" id="AboutNav"></i>個人簡介
+            <div class="navbutton" id="AboutNav" onclick="navClick()">
+                <i class="fa fa-info-circle"></i><p><b>個人簡介</b></p>
             </div>
-            <div class="navbutton">
-                <i class="fa fa-file-code-o" id="WorkNav"></i>作品集
+            <div class="navbutton" id="WorkNav" onclick="navClick()">
+                <i class="fa fa-file-code-o"></i><p><b>作品集</b></p>
             </div>
-            <div class="navbutton">
-                <i class="fa fa-edit" id="NoteNav"></i>筆記
+            <div class="navbutton" id="NoteNav" onclick="navClick()">
+                <i class="fa fa-edit"></i><p><b>筆記</b></p>
             </div>
-            <div class="navbutton">
-                <i class="fa fa-info-circle" id="LinkNav"></i>相關連結
+            <div class="navbutton" id="LinkNav" onclick="navClick()">
+                <i class="fa fa-link"></i><p><b>相關連結</b></p>
             </div>
-            <div class="navbutton" id="CleanNavDiv">
-                <i class="fa fa-recycle" id="CleanNav"></i>清除桌面
+            <div class="navbutton" id="CleanNav" onclick="navClick()">
+                <i class="fa fa-recycle"></i><p><b>清除桌面</b></p>
             </div>
         </nav>
         <section>
             <iframe src="back.html" id="BackPage"></iframe>
+            <div id="WelcomeMask">
+                <h1>歡迎來到我的個人網站</h1>
+                <h3>點選左側按鈕以開啟各個頁面的視窗</h3>
+                <hr>
+                <div>
+                    <h2><i class="fa fa-info-circle"></i> 個人簡介</h2>
+                    <h2><i class="fa fa-file-code-o"></i> 作品集</h2>
+                    <h2><i class="fa fa-edit"></i> 筆記</h2>
+                    <h2><i class="fa fa-link"></i> 相關連結</h2>
+                    <h2><i class="fa fa-recycle"></i> 清除桌面</h2>
+                </div>
+            </div>
         </section>
     </body>
 </html>
