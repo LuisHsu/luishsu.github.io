@@ -9,19 +9,19 @@
     </head>
     <body onload="load()">
         <nav>
-            <div class="navbutton" id="AboutNav" onclick="navClick()">
+            <div class="navbutton" id="AboutNav" onclick="navClick('AboutNav','個人簡介', 'about.html')">
                 <i class="fa fa-info-circle"></i><p><b>個人簡介</b></p>
             </div>
-            <div class="navbutton" id="WorkNav" onclick="navClick()">
+            <div class="navbutton" id="WorkNav" onclick="navClick('WorkNav','作品集', 'work.html')">
                 <i class="fa fa-file-code-o"></i><p><b>作品集</b></p>
             </div>
-            <div class="navbutton" id="NoteNav" onclick="navClick()">
+            <div class="navbutton" id="NoteNav" onclick="navClick('NoteNav','筆記', 'note.html')">
                 <i class="fa fa-edit"></i><p><b>筆記</b></p>
             </div>
-            <div class="navbutton" id="LinkNav" onclick="navClick()">
+            <div class="navbutton" id="LinkNav" onclick="navClick('LinkNav','相關連結', 'link.html')">
                 <i class="fa fa-link"></i><p><b>相關連結</b></p>
             </div>
-            <div class="navbutton" id="CleanNav" onclick="navClick()">
+            <div class="navbutton" id="CleanNav" onclick="windowClear()">
                 <i class="fa fa-recycle"></i><p><b>清除桌面</b></p>
             </div>
         </nav>

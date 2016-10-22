@@ -1,8 +1,8 @@
 body{
     margin: 0;
-    height: 100vh;
+    padding: 0;
+    height: 100%;
     color: #fff;
-    overflow: hidden;
 }
 nav{
     position: fixed;
@@ -17,9 +17,10 @@ section{
     top: 0;
     left: 3.75em;
     width: calc(100% - 3.75em);
-    height: 100%;
+    height: 100vh;
     float: right;
     z-index: 0;
+    overflow: hidden;
 }
 .navbutton i{
     border-radius: 10px;
@@ -53,6 +54,52 @@ section{
     position: absolute;
     left: 3.5em;
     display: inline-block;
+}
+.pagewindow{
+    position: absolute;
+    z-index: 10;
+    width: 60%;
+    height: 70%;
+    top: 15%;
+    left: 20%;
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    border-style: outset;
+    border-width: 1px;
+    border-color: rgb(107, 107, 107);
+    background-color: rgb(46, 46, 46);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 1px 1px 3px 1px rgb(74, 74, 74);
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    resize: both;
+    overflow: hidden;
+}
+.pagewindow b{
+    width: 100%;
+    display: inline-block;
+}
+.pagewindow iframe{
+    width: 100%;
+    position: absolute;
+    top: 1.5em;
+    left: 0;
+    height: calc(100% - 1.5em);
+    background-color: #fff;
+    border-style: none;
+}
+.pagewindow i{
+    position: relative;
+    top: -1.5em;
+    font-size: 1.2em;
+    margin-top: 0.3em;
+    margin-right: 0.3em;
+    float: right;
 }
 #AboutNav > i{
     box-shadow: 1px 1px 3px 0 rgba(209, 222, 250, 1);
