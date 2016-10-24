@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>LuisHsu.net</title>
+        <link rel="stylesheet" href="index.css" media="screen">
+        <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+        <script type="text/javascript" src="index.js"></script>
+    </head>
+    <body onload="load()">
+        <nav>
+            <div class="navbutton" id="AboutNav" onclick="navClick('AboutNav','About Me', 'about.html')">
+                <i class="fa fa-info-circle"></i><p><b>About Me</b></p>
+            </div>
+            <div class="navbutton" id="WorkNav" onclick="navClick('WorkNav','Works', 'work.html')">
+                <i class="fa fa-file-code-o"></i><p><b>Works</b></p>
+            </div>
+            <div class="navbutton" id="NoteNav" onclick="navClick('NoteNav','Notes', 'note.html')">
+                <i class="fa fa-edit"></i><p><b>Notes</b></p>
+            </div>
+            <div class="navbutton" id="LinkNav" onclick="navClick('LinkNav','Links', 'link.html')">
+                <i class="fa fa-link"></i><p><b>Links</b></p>
+            </div>
+            <div class="navbutton" id="CleanNav" onclick="windowClear()">
+                <i class="fa fa-recycle"></i><p><b>Clear desktop</b></p>
+            </div>
+        </nav>
+        <section>
+            <iframe src="back.html" id="BackPage"></iframe>
+            <div id="WelcomeMask">
+                <h1>Welcome to my website!</h1>
+                <h3>Click the buttoms on your left to open windows.</h3>
+                <hr>
+                <div>
+                    <h2><i class="fa fa-info-circle"></i> About Me</h2>
+                    <h2><i class="fa fa-file-code-o"></i> Works</h2>
+                    <h2><i class="fa fa-edit"></i> Notes</h2>
+                    <h2><i class="fa fa-link"></i> Links</h2>
+                    <h2><i class="fa fa-recycle"></i> Clear desktop</h2>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
