@@ -53,41 +53,50 @@
                 default:
             }
         }
-        function keyPress(event) {
+        function keyPress(e) {
             var opts = document.getElementsByTagName('td')
-            if (event.key == "ArrowUp") {
+            if (e.key == "ArrowUp") {
                 if(selLang > 0){
                     opts[selLang].className = ''
                     opts[--selLang].className = 'selLang'
                 }
-            }else if (event.key == "ArrowDown") {
+            }else if (e.key == "ArrowDown") {
                 if(selLang < opts.length - 1){
                     opts[selLang].className = ''
                     opts[++selLang].className = 'selLang'
                 }
-            }else if(event.key == "Enter"){
+            }else if(e.key == "Enter"){
                 enterPage(selLang)
             }
         }
+        function mouseOver(index){
+            var opts = document.getElementsByTagName('td')
+            opts[selLang].className = ''
+            opts[index].className = 'selLang'
+            selLang = index
+        }
+        function load() {
+            document.body.addEventListener("keydown", keyPress)
+        }
     </script>
-    <body onkeypress="keyPress(event)">
+    <body onload="load()">
         <h3>LuisHsu.net bootloader</h3>
         <section>
             <table>
                 <tr>
-                    <td class="selLang">
+                    <td class="selLang" onclick="enterPage(0)" onmouseover="mouseOver(0)">
                         繁體中文
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td onclick="enterPage(1)" onmouseover="mouseOver(1)">
                         English
                     </td>
                 </tr>
             </table>
         </section>
-        <h4>用鍵盤 &uarr; 和 &darr; 鍵選擇語言選項，按Enter鍵啟動已選擇的首頁。</h4>
-        <h4>Use the &uarr; and &darr; keys to select which entry is highlighted.</h4>
-        <h4>Press enter to boot the selected homepage.</h4>
+        <h4>用鍵盤 &uarr; 和 &darr; 鍵選擇語言選項，按Enter鍵啟動已選擇的首頁，或用滑鼠點擊選項啟動</h4>
+        <h4>Use the &uarr; and &darr; keys, or put mouse over the entry, to select which entry is highlighted.</h4>
+        <h4>Press enter or click the entry to boot the selected homepage.</h4>
     </body>
 </html>
