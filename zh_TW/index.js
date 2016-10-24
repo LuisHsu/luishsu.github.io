@@ -1,4 +1,3 @@
-var Windows = []
 function bodyClick() {
     document.getElementById('WelcomeMask').style.display = 'none'
     document.body.removeEventListener("click", bodyClick)
@@ -27,18 +26,7 @@ function windowDown(e){
         e.target.setAttribute('lastpX', e.pageX)
         e.target.setAttribute('lastY', e.target.parentElement.offsetTop)
         e.target.setAttribute('lastpY', e.pageY)
-        windowPull(e.target.parentElement)
         e.target.addEventListener('mousemove', windowMove)
-    }
-}
-function windowPull(obj) {
-    var index = Windows.findIndex((cur) => {
-        return cur == obj
-    })
-    Windows.splice(index, 1)
-    Windows.push(obj)
-    for (var i = 0; i < Windows.length; i++) {
-        Windows[i].style.zIndex = 90+i
     }
 }
 function windowUp(e){
@@ -69,7 +57,6 @@ function windowMax(e) {
         obj.style.height = '100%'
         e.target.className = 'fa fa-compress'
         obj.setAttribute('windowstate', 'maximal')
-        windowPull(obj)
     }else{
         obj.style.transition = 'all ease 0.5s'
         obj.addEventListener('transitionend', maxTransEnd)
@@ -117,16 +104,6 @@ function windowMin(e) {
 function windowClose(e) {
     var obj = e.target.parentElement
     obj.parentElement.removeChild(obj)
-    var index = Windows.findIndex((cur) => {
-        return cur == obj
-    })
-    Windows.splice(index, 1)
-}
-function windowClear(){
-    while(Windows.length){
-        obj = Windows.pop()
-        obj.parentElement.removeChild(obj)
-    }
 }
 function navClick(id, title, link) {
     var existWin = document.getElementById(id + 'Window')
@@ -149,7 +126,6 @@ function navClick(id, title, link) {
                 existWin.style.height = '100%'
                 existWin.setAttribute('windowstate', 'maximal')
             }
-            windowPull(existWin)
         }
     }else{
         var windowObj = document.createElement('DIV')
@@ -179,9 +155,5 @@ function navClick(id, title, link) {
         frame.src = link
         windowObj.appendChild(frame)
         document.body.lastElementChild.appendChild(windowObj)
-        Windows.push(windowObj)
-        for (var i = 0; i < Windows.length; i++) {
-            Windows[i].style.zIndex = 90+i
-        }
     }
 }
